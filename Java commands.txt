@@ -1,0 +1,58 @@
+Maven command to download docs for maven jars:
+
+mvn dependency:sources
+mvn dependency:resolve -Dclassifier=javadoc
+
+
+Add pulgins to attach the sources to the Jars
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+
+mvn package
+
+command to search for a file in Java:
+ctrl + shift + t
+
+command for indentation:
+ctrl A + ctrl I
+
+Remove all the open tabs
+ctrl + shift + w
+
+comment in eclispse:
+ctrl + /
+
+for xml files:
+ctrl + shift + /   ; to uncomment : \
+
+command to auto generate codes in Java:
+alt + shift + s
+
+Git command:
+git mergetool -d
+git difftool -d
