@@ -1,0 +1,72 @@
+Git commands: 
+mkdir <foldername> : Create a new folder
+
+git clone "https://a582377@itec-stash.fmr.com/scm/pr103325/ap115639-bundle_retry_batch.git" "Folder location to checkout for the first time" 
+
+git clone -b feature/2021.11.18 https://itec-stash.fmr.com/scm/pr000023/ap001440_cam_ui_fdotallprojects.git
+
+For large repos:
+$ git clone http://github.com/large-repository --depth 1
+$ cd large-repository
+$ git fetch --unshallow
+
+git checkout feature/testBranch To switch to feature branch 
+
+git checkout -b feature/testBranch : If you have deleted the local branch then use this command as, -b creates a new branch for you.
+
+git status : To see what all have changed
+			- this won't show the differences in the file. It just prints out the files that are added/modified.
+
+git add <file_name> : To add files to staging : 
+					 - once this command is executed, the staged files will be shown in green color with Changes to be committed header
+					 - alternatively use git add * to stage all the files at once.
+					 
+(use "git add <file>..." to update what will be committed)
+(use "git checkout -- <file>..." to discard changes in working directory)					 
+git reset HEAD <file_name> : to unstage file.
+git reset --hard - to reset all changes. Now repo will be as it is in stash.
+
+RPC failed; due to poor network connection or large repo
+git config --global http.postBuffer 524288000
+
+git commit -m "message" : To commit the staged changes to local repo 
+
+git commit -a : To commit staged and non-staged change to local repo 
+
+git push : To push the code to tracked remote branch
+
+git branch : lists all available branches and tell you which branch is currently checked out.
+			- use option -r at the end to list all remote branches.
+			- use option -d at the end to delete the branch:  -d branchname (applicable only to local)
+git push -d origin feature/a635748/june (delete remotely)
+
+
+git branch  -D feature/TestBranch :  To delete the branch locally. D is for force delete, d is for deleting if there is no changes made to branch locally.
+
+git push --delete https://a582377@itec-stash.fmr.com/scm/pr103325/ap115639-bundle_retry_batch.git feature/testGitBash : To delete a branch in remote/stash.
+
+git pull - fetch from remote server
+
+git fetch - fetchs the changes happened in remote/ stash.
+
+git revert commitId;
+After that a VM will pop up with commit comments; make the comments as you wish and after that "Press Esc and then type :wq to save and exit."
+
+git revert HEAD~1 : will revert the first commit in your local, then git commit -m "message"
+
+Kdiff tool used as merge conflict resolver: https://docs.kde.org/trunk5/en/extragear-utils/kdiff3/git.html
+git difftool -d
+
+More details : https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
+
+
+
+fix gitignore file not being picked
+git rm -r --cached .
+git add .
+git commit -m "fixed untracked files"
+
+
+Remove spaces from being commit
+git diff -U0 -w --no-color | git apply --cached --ignore-whitespace --unidiff-zero -
+ 

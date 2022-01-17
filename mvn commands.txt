@@ -1,0 +1,18 @@
+# Maven Commands
+
+mvn compile
+# Download all the dependencies
+# Compile the project
+# And generate the target folder
+
+mvn install
+# Builds the maven project and installs it into local maven repository
+
+mvn clean
+# clean the target folder and also remove all the imported dependencies
+
+mvn package
+# package the project; creates the jar/war (if packaging mentioned as war in pom.xml)
+
+java -jar C:\Users\a592181\Documents\GIT\AdvisorDetails\producer\target\producer-0.0.1-SNAPSHOT.jar 
+# command to run the executable jar
