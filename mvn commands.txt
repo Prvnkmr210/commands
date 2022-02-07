@@ -1,3 +1,11 @@
+Maven is a software project management tool, based on the concept of a project object model (POM). Maven manage a projects build, reporting and documenttation.
+It provides dependency management and also resolve transitive dependencies. It is a managment tool which provides below capabilities.
+Generate
+Documentation
+Compile
+Package
+Install - in server reporsitoies or local repositories
+
 # Maven Commands
 
 mvn compile
@@ -16,3 +24,24 @@ mvn package
 
 java -jar C:\Users\a592181\Documents\GIT\AdvisorDetails\producer\target\producer-0.0.1-SNAPSHOT.jar 
 # command to run the executable jar
+
+
+Maven repository are of three types: local, central - provided by maven community, remote - developer's own custom repository
+
+Build Profile - It is a set of configuration values which can be used to set or override default values of Maven build. Different build profiles listed below:
+Per Project - defined in pom.xml
+Per User - defines in settings.xml
+Golbal - defined in Maven global settings.xml file
+
+Maven plugins are used to
+create jar file
+create war file
+compile code files
+unit testing of code
+create project documentation
+create project reports
+
+Archetype - is a Maven plugin whose task it create a project structure as per its template.
+command to create a new project based on an archetype:: mvn archetype:generate
+
+Transitive dependency means to avoid needing to discover and specify the libraries that your own depedencies require and including them automatically. 
