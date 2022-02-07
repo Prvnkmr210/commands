@@ -8,6 +8,9 @@ Install - in server reporsitoies or local repositories
 
 # Maven Commands
 
+mvn clean
+# clean the target folder and also remove all the imported dependencies
+
 mvn compile
 # Download all the dependencies
 # Compile the project
@@ -16,11 +19,34 @@ mvn compile
 mvn install
 # Builds the maven project and installs it into local maven repository
 
-mvn clean
-# clean the target folder and also remove all the imported dependencies
+mvn clean install
+# clean, compile, test, install the jars to local repository
+
+mvn clean install -DskipTests
+# skip test
+
+mvn -X clean install
+# To run maven in debug mode
+
+mvn -X clean install >> sample.txt
+# All the steps would be written out in the text file
 
 mvn package
 # package the project; creates the jar/war (if packaging mentioned as war in pom.xml)
+
+mvn help:effective-pom
+# prints out the effective pom
+
+mvn help:effective-pom -Doutput=sample.txt
+# Sends out the effective pom to text file
+
+mvn help:effective-seetings
+# Displays effective settings.xml file
+
+mvn dependency:tree
+
+mvn dependency:sources
+# To download the source code
 
 java -jar C:\Users\a592181\Documents\GIT\AdvisorDetails\producer\target\producer-0.0.1-SNAPSHOT.jar 
 # command to run the executable jar
@@ -44,4 +70,8 @@ create project reports
 Archetype - is a Maven plugin whose task it create a project structure as per its template.
 command to create a new project based on an archetype:: mvn archetype:generate
 
-Transitive dependency means to avoid needing to discover and specify the libraries that your own depedencies require and including them automatically. 
+Transitive dependency means all the dependencies inside a dependency will be included. Maven uses Dependency Mediation to pick the right depedency to be used in the project. It picks the neares definition means the version used will be closest one to the project in the tree of dependencies.
+
+Dependency scope - includes dependencies as per the current stage of the build. various dependency scopes are - compile, provided, runtime, test, system and import. Compile is the default scope.
+
+Artifact is determined using groupId, artifactId, version, type, classifier. type - determines the type of the dependency (jar, war, ear), whereas classifier - The classifier distinguishes artifacts that were built from the same POM but differ in content. It is some optional and arbitrary string that - if present - is appended to the artifact name just after the version number. 
