@@ -22,6 +22,10 @@ mvn install
 mvn clean install
 # clean, compile, test, install the jars to local repository
 
+# start the application
+mvn spring-boot:run
+ctrl+c - command to terminate the springboot Application
+
 mvn clean install -DskipTests
 # skip test
 
