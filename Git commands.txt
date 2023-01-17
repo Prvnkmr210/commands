@@ -71,3 +71,9 @@ git commit -m "fixed untracked files"
 Remove spaces from being commit
 git diff -U0 -w --no-color | git apply --cached --ignore-whitespace --unidiff-zero -
  
+Merging two branches when there are lot of changes on two branches
+1> Create a new branch from destination
+2> Merge base branch into new branch
+3> Push changes
+4> Pull Request to merge new branch into destination branch
+
