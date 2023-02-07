@@ -77,3 +77,7 @@ Merging two branches when there are lot of changes on two branches
 3> Push changes
 4> Pull Request to merge new branch into destination branch
 
+Rename file
+Git branch -m old-name new-name
+git push origin -d oldbranch
+git push origin -u newbranch
