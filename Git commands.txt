@@ -26,6 +26,7 @@ git add <file_name> : To add files to staging :
 git reset HEAD <file_name> : to unstage file.
 git reset; unstage all the stages files - revers of git add *
 git reset --hard - to reset all changes. Now repo will be as it is in stash.
+git reset --hard origin - For deleting any unpushed commit
 
 RPC failed; due to poor network connection or large repo
 git config --global http.postBuffer 524288000
