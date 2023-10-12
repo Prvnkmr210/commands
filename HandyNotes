@@ -1,0 +1,4 @@
+Relative path
+. - current Directory
+.. - Parent Directory
+Always remember, parent directory will be one directory up from the current directory. And it always deals in Directory.
